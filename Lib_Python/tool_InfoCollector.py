@@ -165,7 +165,7 @@ def Get_NtuplesInfo (lines, isRef):
 		pass
 
 	# * Add directory for histograms
-	dir_hist = "/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/"
+	dir_hist = "Output/EGM_Commissioning_Electron/"
 	dir_hist += "Hist_{}{}/" . format (dict_listInfo["reproc"], dict_listInfo["year"])
 	dir_hist += "{}/" . format (dict_listInfo["version"])
 	dict_listInfo["dirHist"] = dir_hist
@@ -324,11 +324,17 @@ def Get_PlotsInfo (set_referenceNtuple, set_targetNtuple):
 
 
 			# * Get the dirs to the plots
-			dirtmp = "/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/"
+			dirtmp = "Output/EGM_Commissioning_Electron/"
 			dirtmp += "Plot_"
-			dirtmp += "{}-{}-{}" . format (set_targetNtuple[idict]["reproc"], set_targetNtuple[idict]["year"], set_targetNtuple[idict]["version"])
+			dirtmp += "{}-{}-{}" . format (
+					set_targetNtuple[idict]["reproc"],
+					set_targetNtuple[idict]["year"],
+					set_targetNtuple[idict]["version"])
 			dirtmp += "_vs_"
-			dirtmp += "{}-{}-{}/" . format (set_referenceNtuple[idict]["reproc"], set_referenceNtuple[idict]["year"], set_referenceNtuple[idict]["version"])
+			dirtmp += "{}-{}-{}/" . format (
+					set_referenceNtuple[idict]["reproc"],
+					set_referenceNtuple[idict]["year"],
+					set_referenceNtuple[idict]["version"])
 			dirtmp += "VariableName/"
 
 			# Get the paths to the plots
@@ -353,9 +359,13 @@ def Get_PlotsInfo (set_referenceNtuple, set_targetNtuple):
 
 				pass
 			else:
-				name_run = "run{}-{}" . format (nameTar_DTorMC, set_targetNtuple[idict]["runPeriod"][ihist])
+				name_run = "run{}-{}" . format (
+						nameTar_DTorMC,
+						set_targetNtuple[idict]["runPeriod"][ihist])
 				name_run += "_vs_"
-				name_run += "run{}-{}" . format (nameRef_DTorMC, set_referenceNtuple[idict]["runPeriod"][ihist])
+				name_run += "run{}-{}" . format (
+						nameRef_DTorMC,
+						set_referenceNtuple[idict]["runPeriod"][ihist])
 
 				pathtmp += "plot_{}_*.png" . format (name_run)
 
