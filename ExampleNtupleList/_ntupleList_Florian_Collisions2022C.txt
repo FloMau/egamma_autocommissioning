@@ -1,0 +1,41 @@
+<ntuple_target>
+	fileInput:
+		$ /eos/cms/store/group/phys_egamma/ec/fmausolf/EGM_comm/ntuple_Run3_data_call_10_data/data/EGamma/crab_Egamma2022C/220812_095635/0000/merge.root
+	runPeriod:
+		$ C
+	luminosity:
+		$ 0.166
+	filePU:
+		$ ignore
+	treePU:
+		$ ignore
+	legend:     Data 2022C  
+	nCompare:   2
+	year:       2022 Run C (Call 10)
+	reproc:     -
+	version:    data
+	isMC:       false
+	doCombine:  false 
+</ntuple_target>
+
+
+
+<ntuple_reference>
+	fileInput:
+		$ /eos/cms/store/group/phys_egamma/ec/fmausolf/EGM_comm/TnP_DY_NLO_MC_Run3Winter22/DYToEE_M-50_NNPDF31_TuneCP5_13p6TeV-powheg-pythia8/TnP_DY_NLO_MC_Run3Winter22/220812_091911/0000/merged.root
+	runPeriod:
+		$ C
+	luminosity:
+		$ 0.166
+	filePU:
+		$ /eos/user/f/fmausolf/TnP_Ntuplizer_test/PU/DY_powheg_ele.pu.puTree.root
+	treePU:
+		$ weights_data_Run2022C
+	legend:     Z -> ee (MC)
+	nCompare:   2
+	year:       MC
+	reproc:     -
+	version:    MC
+	isMC:       true
+	doCombine:  false 
+</ntuple_reference>

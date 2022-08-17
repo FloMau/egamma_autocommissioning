@@ -1,0 +1,99 @@
+{
+"variable" : "neuphoIso",
+"formula"  : "max (el_neuIso + el_phoIso - Compute_effArea(4, el_sc_abseta) * event_rho.rho,  0.0)"
+}
+
+{
+"variable" : "neu_A",
+"formula"  : "Compute_effArea(1, el_sc_abseta)"
+}
+
+{
+"variable" : "cha_A",
+"formula"  : "Compute_effArea(2, el_sc_abseta)"
+}
+
+{
+"variable" : "pho_A",
+"formula"  : "Compute_effArea(3, el_sc_abseta)"
+}
+
+{
+"variable" : "combinedProbeIso",
+"formula"  : "(neuphoIso+el_chIso)/el_pt"
+}
+
+{
+"variable" : "el_neuIso_puSub",
+"formula"  : "max (el_neuIso - neu_A*event_rho.rho,  0.0)"
+}
+
+{
+"variable" : "el_phoIso_puSub",
+"formula"  : "max (el_phoIso - pho_A*event_rho.rho,  0.0)"
+}
+
+{
+"variable" : "el_chIso_puSub",
+"formula"  : "max (el_chIso - cha_A*event_rho.rho,   0.0)"
+}
+
+{
+"variable" : "el_relphoIso_puSub",
+"formula"  : "el_phoIso_puSub/el_pt"
+}
+
+{
+"variable" : "el_relneuIso_puSub",
+"formula"  : "el_neuIso_puSub/el_pt"
+}
+
+{
+"variable" : "el_relchIso_puSub",
+"formula"  : "el_chIso_puSub/el_pt"
+}
+
+{
+"variable" : "el_relphoIso",
+"formula"  : "el_phoIso/el_pt"
+}
+
+{
+"variable" : "el_relneuIso",
+"formula"  : "el_neuIso/el_pt"
+}
+
+{
+"variable" : "el_relchIso",
+"formula"  : "el_chIso/el_pt"
+}
+
+{
+"variable" : "sc_pt_p",
+"formula"  : "el_sc_e/cosh(el_sc_eta)"
+}
+
+{
+"variable" : "scraw_pt_p",
+"formula"  : "el_sc_rawE/cosh(el_sc_eta)"
+}
+
+{
+"variable" : "seed_pt_p",
+"formula"  : "el_seed_e/cosh(el_sc_eta)"
+}
+
+{
+"variable" : "sc_pt_t",
+"formula"  : "tag_sc_e/cosh(tag_sc_eta)"
+}
+
+{
+"variable" : "mass_sc",
+"formula"  : "Compute_invariantMass(sc_pt_p, el_eta, el_phi, sc_pt_t, tag_Ele_eta, tag_Ele_phi)"
+}
+
+{
+"variable" : "el_sc_esETorawSC",
+"formula"  : "el_sc_esE/el_sc_rawE"
+}

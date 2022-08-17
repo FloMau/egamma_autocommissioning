@@ -1,0 +1,132 @@
+{
+"filter1" : "el_sc_abseta>1.566  &&  el_5x5_sieie<0.0356  &&  fabs(el_dEtaIn)<0.0072  &&  fabs(el_dPhiIn)<0.147  &&  el_hoe<0.0414  &&  fabs(el_dxy)<0.273  &&  fabs(el_dz)<0.885860",
+"regECAL" : "EE"
+}
+
+
+
+{
+"variable"   : "el_chIso",
+"histogram"  : "el_chIso",
+"titleX"     : "Charged isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_neuIso",
+"histogram"  : "el_neuIso",
+"titleX"     : "Neutral isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_phoIso",
+"histogram"  : "el_phoIso",
+"titleX"     : "Photon isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5.0,
+"PUWeight"   : "ev_weight"
+}
+
+
+
+{
+"variable"   : "el_relchIso",
+"histogram"  : "el_relchIso",
+"titleX"     : "Rel. Charged isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.25,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_relneuIso",
+"histogram"  : "el_relneuIso",
+"titleX"     : "Rel. Neutral isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_relphoIso",
+"histogram"  : "el_relphoIso",
+"titleX"     : "Rel. Photon isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+
+
+{
+"variable"   : "el_chIso_puSub",
+"histogram"  : "el_chIso_puSub",
+"titleX"     : "PU subtracted Charged isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_neuIso_puSub",
+"histogram"  : "el_neuIso_puSub",
+"titleX"     : "PU subtracted Neutral isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_phoIso_puSub",
+"histogram"  : "el_phoIso_puSub",
+"titleX"     : "PU subtracted Photon isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+
+
+{
+"variable"   : "el_relchIso_puSub",
+"histogram"  : "el_relchIso_puSub",
+"titleX"     : "Rel. PU subtracted Charged isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_relneuIso_puSub",
+"histogram"  : "el_relneuIso_puSub",
+"titleX"     : "Rel. PU subtracted Neutral isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_relphoIso_puSub",
+"histogram"  : "el_relphoIso_puSub",
+"titleX"     : "Rel. PU subtracted Photon isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}

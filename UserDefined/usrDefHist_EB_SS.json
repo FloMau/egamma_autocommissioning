@@ -1,0 +1,361 @@
+{
+"filter1" : "el_sc_abseta<=1.479  &&  combinedProbeIso<0.1",
+"regECAL" : "EB"
+}
+
+{
+"variable"   : "el_sc_eta",
+"histogram"  : "el_sc_eta",
+"titleX"     : "SC #eta",
+"nBins"      : 100,
+"binMin"     : -1.5,
+"binMax"     : 1.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sc_phi",
+"histogram"  : "el_sc_phi",
+"titleX"     : "#phi_{sc} [rad]",
+"nBins"      : 100,
+"binMin"     : -3.2,
+"binMax"     : 3.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sc_e",
+"histogram"  : "el_sc_e",
+"titleX"     : "SC Energy [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 250,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sc_e",
+"histogram"  : "el_sc_RawE",
+"titleX"     : "SC Raw Energy [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 250,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_eta",
+"histogram"  : "el_eta",
+"titleX"     : "#eta",
+"nBins"      : 60,
+"binMin"     : -1.5,
+"binMax"     : 1.5
+}
+
+{
+"variable"   : "el_phi",
+"histogram"  : "el_phi",
+"titleX"     : "#phi [rad]",
+"nBins"      : 70,
+"binMin"     : -3.5,
+"binMax"     : 3.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_et",
+"histogram"  : "el_et",
+"titleX"     : "E_{T} [GeV]",
+"nBins"      : 50,
+"binMin"     : 20.0,
+"binMax"     : 100.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "tag_Ele_phi",
+"histogram"  : "tag_Ele_phi",
+"titleX"     : "Tag #phi [rad]",
+"nBins"      : 70,
+"binMin"     : -3.5,
+"binMax"     : 3.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "tag_Ele_et",
+"histogram"  : "tag_Ele_et",
+"titleX"     : "Tag E_{T} [GeV]",
+"nBins"      : 80,
+"binMin"     : 40.0,
+"binMax"     : 120.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "tag_Ele_eta",
+"histogram"  : "tag_Ele_eta",
+"titleX"     : "Tag #eta",
+"nBins"      : 60,
+"binMin"     : -1.5,
+"binMax"     : 1.5
+}
+
+
+{
+"variable"   : "event_nPV.mNPV",
+"histogram"  : "event_nPV",
+"titleX"     : "Weighted #Vertices",
+"nBins"      : 70,
+"binMin"     : 0.0,
+"binMax"     : 70.0,
+"PUWeight"   : "1.0"
+}
+
+{
+"variable"   : "event_nPV.mNPV",
+"histogram"  : "event_nPV_wei",
+"titleX"     : "Weighted #Vertices",
+"nBins"      : 70,
+"binMin"     : 0.0,
+"binMax"     : 70.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "event_rho.rho",
+"histogram"  : "event_rho",
+"titleX"     : "#rho_{event}",
+"nBins"      : 100,
+"binMin"     : 0.0,
+"binMax"     : 50.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sieie",
+"histogram"  : "el_sieie",
+"titleX"     : "#sigma(i#etai#eta)",
+"nBins"      : 35,
+"binMin"     : 0.0,
+"binMax"     : 0.016,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_5x5_sieie",
+"histogram"  : "el_5x5_sieie",
+"titleX"     : "5#times5 #sigma(i#etai#eta)",
+"nBins"      : 35,
+"binMin"     : 0.0,
+"binMax"     : 0.016,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_r9",
+"histogram"  : "el_r9",
+"titleX"     : "R9",
+"nBins"      : 80,
+"binMin"     : 0.2,
+"binMax"     : 1.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_r9",
+"histogram"  : "el_r9_upto1",
+"titleX"     : "R9",
+"nBins"      : 60,
+"binMin"     : 0.4,
+"binMax"     : 1.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_5x5_r9",
+"histogram"  : "el_5x5_r9",
+"titleX"     : "5#times5 R9",
+"nBins"      : 100,
+"binMin"     : 0.2,
+"binMax"     : 1.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_5x5_r9",
+"histogram"  : "el_5x5_r9_upto1",
+"titleX"     : "5#times5 R9",
+"nBins"      : 60,
+"binMin"     : 0.4,
+"binMax"     : 1.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_dEtaIn",
+"histogram"  : "el_dEtaIn",
+"titleX"     : "#Delta#eta_{in}",
+"nBins"      : 100,
+"binMin"     : -0.02,
+"binMax"     : 0.02,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_dPhiIn",
+"histogram"  : "el_dPhiIn",
+"titleX"     : "#Delta#phi_{in} [rad]",
+"nBins"      : 70,
+"binMin"     : -0.15,
+"binMax"     : 0.15,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "pair_mass",
+"histogram"  : "pair_mass",
+"titleX"     : "M_{ee} [GeV]",
+"nBins"      : 80,
+"binMin"     : 80,
+"binMax"     : 100,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "mass_sc",
+"histogram"  : "mass_sc",
+"titleX"     : "M_{ee} (SC energy) [GeV]",
+"nBins"      : 80,
+"binMin"     : 80,
+"binMax"     : 100,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe",
+"histogram"  : "el_hoe",
+"titleX"     : "H/E",
+"nBins"      : 20,
+"binMin"     : 0.0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_mHits",
+"histogram"  : "el_mHits",
+"titleX"     : "#missing hits",
+"nBins"      : 4,
+"binMin"     : 0.0,
+"binMax"     : 4.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_etaW",
+"histogram"  : "el_etaW",
+"titleX"     : "#eta width",
+"nBins"      : 50,
+"binMin"     : 0.00,
+"binMax"     : 0.025,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_phiW",
+"histogram"  : "el_phiW",
+"titleX"     : "#phi width",
+"nBins"      : 30,
+"binMin"     : 0.0,
+"binMax"     : 0.15,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_fbrem",
+"histogram"  : "el_fbrem",
+"titleX"     : "fBrem",
+"nBins"      : 25,
+"binMin"     : 0.0,
+"binMax"     : 1.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sc_esE",
+"histogram"  : "el_sc_esE",
+"titleX"     : "Preshower Energy [GeV]",
+"nBins"      : 40,
+"binMin"     : 0,
+"binMax"     : 40,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_sc_esETorawSC",
+"histogram"  : "el_sc_esETorawSC",
+"titleX"     : "Preshower Energy/rawSC",
+"nBins"      : 30,
+"binMin"     : 0.0,
+"binMax"     : 0.3,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_eoverp_wES",
+"histogram"  : "el_eoverp_wES",
+"titleX"     : "e/p (wES)",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 2,
+"PUWeight"   : "ev_weight"
+}
+
+
+
+
+
+{
+"variable"   : "el_gsfchi2",
+"histogram"  : "el_chisq",
+"titleX"     : "#chi^{2} gsf",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 50.0,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_dxy",
+"histogram"  : "el_dxy",
+"titleX"     : "dxy [mm]",
+"nBins"      : 60,
+"binMin"     : -0.3,
+"binMax"     : 0.3,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_dz",
+"histogram"  : "el_dz",
+"titleX"     : "dz [mm]",
+"nBins"      : 40,
+"binMin"     : -0.1,
+"binMax"     : 0.1,
+"PUWeight"   : "ev_weight"
+}
+
+
+
+
+
+{
+"variable"   : "el_nonTrigMVA80X",
+"histogram"  : "el_nonTrigMVA80X",
+"titleX"     : "Non-triggering MVA (80X)",
+"nBins"      : 40,
+"binMin"     : -0.1,
+"binMax"     : 0.1,
+"PUWeight"   : "ev_weight"
+}

@@ -1,0 +1,18 @@
+{
+"filter1" : "tag_sc_abseta>1.566  &&  el_sc_abseta>1.566  &&  combinedProbeIso<0.1",
+"regECAL" : "EE_EE"
+}
+
+
+
+
+
+{
+"variable"   : "pair_mass",
+"histogram"  : "pair_mass",
+"titleX"     : "M_{ee} [GeV]",
+"nBins"      : 80,
+"binMin"     : 80,
+"binMax"     : 100,
+"PUWeight"   : "ev_weight"
+}

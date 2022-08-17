@@ -1,0 +1,545 @@
+{
+"filter0" : "tag_Ele_pt>40  &&  tag_sc_abseta<1.4442  &&  el_et>20  &&  el_sc_abseta<2.5  &&  pair_mass>80  &&  pair_mass<100",
+"filter1" : "tag_sc_abseta <= 1.479 && el_sc_abseta <= 1.479 && combinedProbeIso<0.1",
+"regECAL" : "EB_EB",
+}
+
+
+{
+"variable"   : "event_nPV_wei",
+"histogram"  : "event_nPV_wei",
+"titleX"     : "SC #eta",
+"nBins"      : "50",
+"binMin"     : "-2.5",
+"binMax"     : "2.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_eta",
+"histogram"  : "el_sc_eta",
+"titleX"     : "SC #eta",
+"nBins"      : "50",
+"binMin"     : "-2.5",
+"binMax"     : "2.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_phi",
+"histogram"  : "el_sc_phi",
+"titleX"     : "SC #phi [rad]",
+"nBins"      : "70",
+"binMin"     : "-3.5",
+"binMax"     : "3.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_eta",
+"histogram"  : "el_eta",
+"titleX"     : "#eta",
+"nBins"      : "50",
+"binMin"     : "-2.5",
+"binMax"     : "2.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_phi",
+"histogram"  : "el_phi",
+"titleX"     : "#phi",
+"nBins"      : "70",
+"binMin"     : "-3.5",
+"binMax"     : "3.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "tag_Ele_phi",
+"histogram"  : "tag_sc_phi",
+"titleX"     : "Tag SC #phi [rad]",
+"nBins"      : "70",
+"binMin"     : "-3.5",
+"binMax"     : "3.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "event_nPV.mNPV",
+"histogram"  : "event_nPV_wei",
+"titleX"     : "#vertices",
+"nBins"      : "70",
+"binMin"     : "0",
+"binMax"     : "70",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "event_rho.rho",
+"histogram"  : "event_rho",
+"titleX"     : "#rho",
+"nBins"      : "100",
+"binMin"     : "0",
+"binMax"     : "50",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "event_nPV.mNPV",
+"histogram"  : "event_nPV",
+"titleX"     : "#vertices",
+"nBins"      : "70",
+"binMin"     : "0",
+"binMax"     : "70",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "pair_mass",
+"histogram"  : "pair_mass",
+"titleX"     : "Di-lepton invariant mass [GeV]",
+"nBins"      : "60",
+"binMin"     : "60",
+"binMax"     : "120",
+"forSS"      : "true",
+"forRegMass" : "true"
+}
+
+{
+"variable"   : "el_chIso",
+"histogram"  : "el_chIso",
+"titleX"     : "Charged isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_neuIso",
+"histogram"  : "el_neuIso",
+"titleX"     : "Neutral isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_phoIso",
+"histogram"  : "el_phoso",
+"titleX"     : "Photon isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relchIso",
+"histogram"  : "el_relchIso",
+"titleX"     : "Rel. Charged isolation",
+"nBins"      : "60",
+"binMin"     : "0",
+"binMax"     : "0.6",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relneuIso",
+"histogram"  : "el_relneuIso",
+"titleX"     : "Rel. Neutral isolation",
+"nBins"      : "60",
+"binMin"     : "0",
+"binMax"     : "0.6",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relphoIso",
+"histogram"  : "el_relphoIso",
+"titleX"     : "Rel. Photon isolation",
+"nBins"      : "60",
+"binMin"     : "0",
+"binMax"     : "0.6",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_chIso_puSub",
+"histogram"  : "el_chIso_puSub",
+"titleX"     : "PU subtracted Charged isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_neuIso_puSub",
+"histogram"  : "el_neuIso_puSub",
+"titleX"     : "PU subtracted Neutral isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_phoIso_puSub",
+"histogram"  : "el_phoIso_puSub",
+"titleX"     : "PU subtracted Photon isolation [GeV]",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relchIso_puSub",
+"histogram"  : "el_relchIso_puSub",
+"titleX"     : "Rel. PU subtracted Charged isolation",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relneuIso_puSub",
+"histogram"  : "el_relneuIso_puSub",
+"titleX"     : "Rel. PU subtracted Neutral isolation",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_relphoIso_puSub",
+"histogram"  : "el_relphoIso_puSub",
+"titleX"     : "Rel. PU subtracted Photon isolation",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "5",
+"forSS"      : "false",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sieie",
+"histogram"  : "el_sieie",
+"titleX"     : "#sigma(i#etai#eta)",
+"nBins"      : "",
+"binMin"     : "",
+"binMax"     : "",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_r9",
+"histogram"  : "el_r9",
+"titleX"     : "#r9",
+"nBins"      : "110",
+"binMin"     : "0",
+"binMax"     : "1.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_r9",
+"histogram"  : "el_r9_upto1",
+"titleX"     : "#r9",
+"nBins"      : "110",
+"binMin"     : "0.4",
+"binMax"     : "1.0",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_5x5_sieie",
+"histogram"  : "el_5x5_sieie",
+"titleX"     : "5x5 #sigma(i#etai#eta)",
+"nBins"      : "",
+"binMin"     : "",
+"binMax"     : "",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_phi",
+"histogram"  : "el_sc_phi",
+"titleX"     : "SC #phi [rad]",
+"nBins"      : "70",
+"binMin"     : "3.5",
+"binMax"     : "3.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "tag_Ele_phi",
+"histogram"  : "tag_sc_phi",
+"titleX"     : "tag SC #phi [rad]",
+"nBins"      : "70",
+"binMin"     : "3.5",
+"binMax"     : "3.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_dEtaIn",
+"histogram"  : "el_dEtaIn",
+"titleX"     : "#Delta#eta_{in}",
+"nBins"      : "50",
+"binMin"     : "-0.04",
+"binMax"     : "0.04",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_dPhiIn",
+"histogram"  : "el_dPhiIn",
+"titleX"     : "#Delta#phi_{in}",
+"nBins"      : "50",
+"binMin"     : "-0.2",
+"binMax"     : "0.2",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_et",
+"histogram"  : "el_et",
+"titleX"     : "E_{T} [GeV]",
+"nBins"      : "50",
+"binMin"     : "20",
+"binMax"     : "100",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "pair_mass",
+"histogram"  : "pair_mass",
+"titleX"     : "Di-lepton invariant mass [GeV]",
+"nBins"      : "60",
+"binMin"     : "60",
+"binMax"     : "120",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "mass_sc",
+"histogram"  : "mass_sc",
+"titleX"     : "Di-lepton invariant mass using SC energy [GeV]",
+"nBins"      : "60",
+"binMin"     : "60",
+"binMax"     : "120",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_hoe",
+"histogram"  : "el_hoe",
+"titleX"     : "H/E",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "0.2",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_mHits",
+"histogram"  : "el_mHits",
+"titleX"     : "missing hits",
+"nBins"      : "4",
+"binMin"     : "0",
+"binMax"     : "4",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_5x5_r9",
+"histogram"  : "el_5x5_r9",
+"titleX"     : "r9 (5x5)",
+"nBins"      : "110",
+"binMin"     : "0",
+"binMax"     : "1.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_5x5_r9",
+"histogram"  : "el_5x5_r9_upto1",
+"titleX"     : "r9 (5x5)",
+"nBins"      : "110",
+"binMin"     : "0.4",
+"binMax"     : "1.0",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_etaW",
+"histogram"  : "el_etaW",
+"titleX"     : "#eta width",
+"nBins"      : "50",
+"binMin"     : "0.",
+"binMax"     : "0.05",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_phiW",
+"histogram"  : "el_phiW",
+"titleX"     : "#phi width",
+"nBins"      : "50",
+"binMin"     : "0.",
+"binMax"     : "0.5",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_fbrem",
+"histogram"  : "el_fbrem",
+"titleX"     : "#fBrem",
+"nBins"      : "25",
+"binMin"     : "0.",
+"binMax"     : "1",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_esE",
+"histogram"  : "el_sc_esE",
+"titleX"     : "preshower Energy [GeV]",
+"nBins"      : "40",
+"binMin"     : "0.",
+"binMax"     : "40",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_esETorawSC",
+"histogram"  : "el_sc_esETorawSC",
+"titleX"     : "preshower Energy/rawSC",
+"nBins"      : "30",
+"binMin"     : "0.",
+"binMax"     : "0.3",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_e",
+"histogram"  : "el_sc_e",
+"titleX"     : "SC Energy [GeV]",
+"nBins"      : "50",
+"binMin"     : "0.",
+"binMax"     : "250",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_sc_e",
+"histogram"  : "el_sc_rawE",
+"titleX"     : "SC Raw Energy [GeV]",
+"nBins"      : "50",
+"binMin"     : "0.",
+"binMax"     : "250",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_gsfchi2",
+"histogram"  : "el_chisq",
+"titleX"     : "#chi^{2}",
+"nBins"      : "50",
+"binMin"     : "0.",
+"binMax"     : "200",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_dxy",
+"histogram"  : "el_dxy",
+"titleX"     : "dxy",
+"nBins"      : "40",
+"binMin"     : "-0.1",
+"binMax"     : "0.1",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_dz",
+"histogram"  : "el_dz",
+"titleX"     : "dz",
+"nBins"      : "40",
+"binMin"     : "-0.1",
+"binMax"     : "0.1",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_nonTrigMVA80X",
+"histogram"  : "el_nonTrigMVA80X",
+"titleX"     : "nonTrigMVA80X",
+"nBins"      : "50",
+"binMin"     : "-1",
+"binMax"     : "1",
+"forSS"      : "true",
+"forRegMass" : "false"
+}
+
+{
+"variable"   : "el_eoverp_wES",
+"histogram"  : "el_eoverp_wES",
+"titleX"     : "el_eoverp_wES",
+"nBins"      : "20",
+"binMin"     : "0",
+"binMax"     : "1.6",
+"forSS"      : "true",
+"forRegMass" : "false"
+}

@@ -1,0 +1,16 @@
+{
+"filter0" : "pair_mass>80  &&  pair_mass<100",
+"regECAL" : "EE"
+}
+
+
+
+{
+"variable"   : "pair_mass",
+"histogram"  : "pair_mass",
+"titleX"     : "M_{ee} [GeV]",
+"nBins"      : 60,
+"binMin"     : 60.0,
+"binMax"     : 120.0,
+"PUWeight"   : "ev_weight"
+}
