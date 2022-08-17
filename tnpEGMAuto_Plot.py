@@ -413,17 +413,15 @@ def Create_Plot (dict_plotBlock):
 				str_plotOutLocal = str_plotOutLocal . replace ("_*", "_{}".format(name_hist))
 				str_plotOutWeb   = path_plot . replace ("VariableName", "Variable_{}".format(name_hist))
 				str_plotOutWeb   = str_plotOutWeb . replace ("_*", "_{}".format(name_hist))
-				# str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/w/wtabb/www/Egamma/commissioning/Electron/")
-				str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/f/fmausolf/www/Egamma/commissioning/Electron/")
-#				str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/e/egmcom/www/commissioning/Electron/")
-				#str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/l/lcaophuc/www/Commissioning_Automation/Electron/")
+				str_plotOutWeb   = str_plotOutWeb . replace (
+						"Output/EGM_Commissioning_Electron/",
+						"/eos/user/<firstletterofyourusername>/<yourusername>/www/Egamma/commissioning/")
 
 				dir_plot_checkLocal = dir_plot . replace ("VariableName", "Variable_{}".format(name_hist))
 				dir_plot_checkWeb   = dir_plot . replace ("VariableName", "Variable_{}".format(name_hist))
-				# dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/w/wtabb/www/Egamma/commissioning/Electron/")
-				dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/f/fmausolf/www/Egamma/commissioning/Electron/")
-#				dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/e/egmcom/www/commissioning/Electron/")
-				#dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/l/lcaophuc/www/Commissioning_Automation/Electron/")
+				dir_plot_checkWeb   = dir_plot_checkWeb . replace (
+						"Output/EGM_Commissioning_Electron/",
+						"/eos/user/<firstletterofyourusername>/<yourusername>/www/Egamma/commissioning/")
 
 
 				if (isLog):
