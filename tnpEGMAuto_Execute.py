@@ -100,24 +100,24 @@ if __name__ == "__main__":
 	set_listToIgnore = []
 
 	print("\n WARNING: not using list_toIgnore for tests...\n")
-	# if (os.path.isfile(path_listToIgnore)):
-	# 	print ("     ||-- Ignore list is available, collecting ...")
-	#
-	# 	file_listToIgnore = open (path_listToIgnore, "r")
-	# 	lines_toIgnore = file_listToIgnore . readlines()
-	#
-	# 	for line in lines_toIgnore:
-	# 		line = line . replace ('\n', '')
-	# 		set_listToIgnore . append (line)
-	# 		pass
-	#
-	# 	file_listToIgnore . close()
-	# 	pass
-	# else:
-	# 	print ("     ||-- Ignore list is not available, creating one")
-	#
-	# 	do_createIgnoreList = True
-	# 	pass
+	if (os.path.isfile(path_listToIgnore)):
+		print ("     ||-- Ignore list is available, collecting ...")
+
+		file_listToIgnore = open (path_listToIgnore, "r")
+		lines_toIgnore = file_listToIgnore . readlines()
+
+		for line in lines_toIgnore:
+			line = line . replace ('\n', '')
+			set_listToIgnore . append (line)
+			pass
+
+		file_listToIgnore . close()
+		pass
+	else:
+		print ("     ||-- Ignore list is not available, creating one")
+
+		do_createIgnoreList = True
+		pass
 
 	# * Print notification
 	if (len(set_listToIgnore) > 0):
