@@ -35,8 +35,8 @@ if __name__ == "__main__":
 
 	# + Directory containing the list of ntuples
 	#-------------------------------------------
-	#dir_containNtupleList = "/afs/cern.ch/work/e/egmcom/ntuple_production/Output"
-	dir_containNtupleList = "ExampleNtupleList/"
+	dir_containNtupleList = "/afs/cern.ch/work/e/egmcom/ntuple_production/Output"
+	#dir_containNtupleList = "/home/longhoa/ROOT_Work/Task_AutoEGCom/Input"
 	print ("\n")
 	print ("  ======================================================================")
 	print ("  |                                                                    |")
@@ -87,8 +87,8 @@ if __name__ == "__main__":
 
 	# + Check the status of the lists
 	#--------------------------------
-	#path_listToIgnore = "/afs/cern.ch/work/e/egmcom/ntuple_production/Output/info_processedNtupleLists.txt"
-	path_listToIgnore = dir_containNtupleList + "info_processedNtupleLists.txt"
+	path_listToIgnore = "/afs/cern.ch/work/e/egmcom/ntuple_production/Output/info_processedNtupleLists.txt"
+	#path_listToIgnore = "/home/longhoa/ROOT_Work/Task_AutoEGCom/Input/info_processedNtupleLists.txt"
 	print ("     ================================================")
 	print (" [*] Preparation: Searching for processed lists from:")
 	print ("     ================================================")
@@ -100,28 +100,28 @@ if __name__ == "__main__":
 	set_listToIgnore = []
 
 	print("\n WARNING: not using list_toIgnore for tests...\n")
-	if (os.path.isfile(path_listToIgnore)):
-		print ("     ||-- Ignore list is available, collecting ...")
-
-		file_listToIgnore = open (path_listToIgnore, "r")
-		lines_toIgnore = file_listToIgnore . readlines()
-
-		for line in lines_toIgnore:
-			line = line . replace ('\n', '')
-			set_listToIgnore . append (line)
-			pass
-
-		file_listToIgnore . close()
-		pass
-	else:
-		print ("     ||-- Ignore list is not available, creating one")
-
-		do_createIgnoreList = True
-		pass
+	# if (os.path.isfile(path_listToIgnore)):
+	# 	print ("     ||-- Ignore list is available, collecting ...")
+	#
+	# 	file_listToIgnore = open (path_listToIgnore, "r")
+	# 	lines_toIgnore = file_listToIgnore . readlines()
+	#
+	# 	for line in lines_toIgnore:
+	# 		line = line . replace ('\n', '')
+	# 		set_listToIgnore . append (line)
+	# 		pass
+	#
+	# 	file_listToIgnore . close()
+	# 	pass
+	# else:
+	# 	print ("     ||-- Ignore list is not available, creating one")
+	#
+	# 	do_createIgnoreList = True
+	# 	pass
 
 	# * Print notification
 	if (len(set_listToIgnore) > 0):
-		print ("     ||-- Found [ {:02d} ] lists that have already been processed:".format (len(set_listToIgnore)))
+		print ("     ||-- Found [ {:02d} ] lists that have already been processed:" . format (len(set_listToIgnore)))
 		for list_toIgnore in set_listToIgnore:
 			print ("     ||   |-- {:s}" . format (list_toIgnore))
 			pass
@@ -374,15 +374,16 @@ if __name__ == "__main__":
 		pass
 
 
-
+	exit()
 
 	# + Add the available plots to the js file
 	#-----------------------------------------
 	print ("     ================================================")
 	print (" [*] Finalizing: Creating js list for web content ...")
 	print ("     ================================================")
-	dir_toEleSample = "/eos/user/<firstletterofyourusername>/<yourusername>/www/Egamma/commissioning/"
-	dir_containSample = dir_toEleSample + "Electron"
+	# dir_containSample = "/eos/user/w/wtabb/www/Egamma/commissioning/Electron"
+	dir_containSample = "/eos/user/f/fmausolf/www/Egamma/commissioning/Electron"
+#	dir_containSample = "/eos/user/e/egmcom/www/commissioning/Electron"
 
 	if not os.path.exists(dir_containSample):
 		os.makedirs(dir_containSample)
@@ -418,7 +419,9 @@ if __name__ == "__main__":
 			dict_variable["name_var"] = name_variable
 
 			# * Adding dir to plot
-			dict_variable["dir_plot"] = dir_toVariable . replace (dir_toEleSample, "Electron") + "/"
+			# dict_variable["dir_plot"] = dir_toVariable . replace ("/eos/user/w/wtabb/www/Egamma/commissioning/", "") + "/"
+			dict_variable["dir_plot"] = dir_toVariable . replace ("/eos/user/f/fmausolf/www/Egamma/commissioning/", "") + "/"
+#			dict_variable["dir_plot"] = dir_toVariable . replace ("/eos/user/e/egmcom/www/commissioning/", "") + "/"
 
 			list_plotWeb = []
 
@@ -457,7 +460,7 @@ if __name__ == "__main__":
 
 	# file_jsForWeb = open ("/eos/user/w/wtabb/www/Egamma/commissioning/webContent.js", "w")
 	file_jsForWeb = open ("/eos/user/f/fmausolf/www/Egamma/commissioning/webContent.js", "w")
-	#file_jsForWeb = open ("/eos/user/e/egmcom/www/commissioning/webContent.js", "w")
+#	file_jsForWeb = open ("/eos/user/e/egmcom/www/commissioning/webContent.js", "w")
 	file_jsForWeb . write ("webContent =")
 	file_jsForWeb . write (js_WebContent)
 	file_jsForWeb . close()

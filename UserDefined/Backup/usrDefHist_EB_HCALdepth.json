@@ -1,0 +1,85 @@
+{
+"filter1" : "el_sc_abseta<=1.479  &&  combinedProbeIso<0.1",
+"regECAL" : "EB"
+}
+
+{
+"variable"   : "el_hoe_depth1",
+"histogram"  : "el_hoe_depth1",
+"titleX"     : "H / E depth 1",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth2",
+"histogram"  : "el_hoe_depth2",
+"titleX"     : "H / E depth 2",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth3",
+"histogram"  : "el_hoe_depth3",
+"titleX"     : "H / E depth 3",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth4",
+"histogram"  : "el_hoe_depth4",
+"titleX"     : "H / E depth 4",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth5",
+"histogram"  : "el_hoe_depth5",
+"titleX"     : "H / E depth 5",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth6",
+"histogram"  : "el_hoe_depth6",
+"titleX"     : "H / E depth 6",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hoe_depth7",
+"histogram"  : "el_hoe_depth7",
+"titleX"     : "H / E depth 7",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+
+{
+"variable"   : "el_hoe_depth8",
+"histogram"  : "el_hoe_depth8",
+"titleX"     : "H / E depth 8",
+"nBins"      : 50,
+"binMin"     : 0,
+"binMax"     : 0.01,
+"PUWeight"   : "ev_weight"
+}

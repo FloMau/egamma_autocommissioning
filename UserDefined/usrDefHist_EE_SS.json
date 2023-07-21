@@ -11,7 +11,7 @@
 "variable"   : "el_sc_eta",
 "histogram"  : "el_sc_eta",
 "titleX"     : "#eta_{sc}",
-"nBins"      : 100,
+"nBins"      : 50,
 "binMin"     : -2.5,
 "binMax"     : 2.5,
 "PUWeight"   : "ev_weight"
@@ -21,7 +21,7 @@
 "variable"   : "el_sc_phi",
 "histogram"  : "el_sc_phi",
 "titleX"     : "#phi_{sc} [rad]",
-"nBins"      : 100,
+"nBins"      : 50,
 "binMin"     : -3.2,
 "binMax"     : 3.2,
 "PUWeight"   : "ev_weight"
@@ -72,7 +72,7 @@
 "titleX"     : "E_{T} [GeV]",
 "nBins"      : 50,
 "binMin"     : 20.0,
-"binMax"     : 100.0,
+"binMax"     : 50.0,
 "PUWeight"   : "ev_weight"
 }
 
@@ -93,7 +93,7 @@
 {
 "variable"   : "event_nPV.mNPV",
 "histogram"  : "event_nPV",
-"titleX"     : "Weighted #Vertices",
+"titleX"     : "Primary verticess",
 "nBins"      : 70,
 "binMin"     : 0.0,
 "binMax"     : 70.0,
@@ -114,7 +114,7 @@
 "variable"   : "event_rho.rho",
 "histogram"  : "event_rho",
 "titleX"     : "#rho_{event}",
-"nBins"      : 100,
+"nBins"      : 50,
 "binMin"     : 0.0,
 "binMax"     : 50.0,
 "PUWeight"   : "ev_weight"
@@ -148,9 +148,9 @@
 "variable"   : "el_r9",
 "histogram"  : "el_r9",
 "titleX"     : "R9",
-"nBins"      : 80,
+"nBins"      : 50,
 "binMin"     : 0.2,
-"binMax"     : 1.0,
+"binMax"     : 1.2,
 "PUWeight"   : "ev_weight"
 }
 
@@ -168,7 +168,7 @@
 "variable"   : "el_5x5_r9",
 "histogram"  : "el_5x5_r9",
 "titleX"     : "5#times5 R9",
-"nBins"      : 100,
+"nBins"      : 50,
 "binMin"     : 0.2,
 "binMax"     : 1.2,
 "PUWeight"   : "ev_weight"
@@ -192,9 +192,9 @@
 "variable"   : "el_dEtaIn",
 "histogram"  : "el_dEtaIn",
 "titleX"     : "#Delta#eta_{in}",
-"nBins"      : 100,
-"binMin"     : -0.02,
-"binMax"     : 0.02,
+"nBins"      : 50,
+"binMin"     : -0.015,
+"binMax"     : 0.015,
 "PUWeight"   : "ev_weight"
 }
 
@@ -203,8 +203,8 @@
 "histogram"  : "el_dPhiIn",
 "titleX"     : "#Delta#phi_{in} [rad]",
 "nBins"      : 50,
-"binMin"     : -0.15,
-"binMax"     : 0.15,
+"binMin"     : -0.075,
+"binMax"     : 0.075,
 "PUWeight"   : "ev_weight"
 }
 
@@ -216,9 +216,9 @@
 "variable"   : "pair_mass",
 "histogram"  : "pair_mass",
 "titleX"     : "M_{ee} [GeV]",
-"nBins"      : 80,
-"binMin"     : 80,
-"binMax"     : 100,
+"nBins"      : 60,
+"binMin"     : 75,
+"binMax"     : 105,
 "PUWeight"   : "ev_weight"
 }
 
@@ -226,9 +226,9 @@
 "variable"   : "mass_sc",
 "histogram"  : "mass_sc",
 "titleX"     : "M_{ee} (SC energy) [GeV]",
-"nBins"      : 80,
-"binMin"     : 80,
-"binMax"     : 100,
+"nBins"      : 60,
+"binMin"     : 75,
+"binMax"     : 105,
 "PUWeight"   : "ev_weight"
 }
 
@@ -279,7 +279,7 @@
 {
 "variable"   : "el_fbrem",
 "histogram"  : "el_fbrem",
-"titleX"     : "fBrem",
+"titleX"     : "#it{f}_{brem}",
 "nBins"      : 25,
 "binMin"     : 0.0,
 "binMax"     : 1.0,
@@ -313,7 +313,7 @@
 {
 "variable"   : "el_eoverp_wES",
 "histogram"  : "el_eoverp_wES",
-"titleX"     : "e/p (wES)",
+"titleX"     : "E/p",
 "nBins"      : 50,
 "binMin"     : 0.0,
 "binMax"     : 2,

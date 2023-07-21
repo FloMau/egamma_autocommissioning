@@ -51,9 +51,9 @@
 "variable"   : "el_relneuIso",
 "histogram"  : "el_relneuIso",
 "titleX"     : "Rel. Neutral isolation",
-"nBins"      : 50,
+"nBins"      : 40,
 "binMin"     : 0.0,
-"binMax"     : 0.5,
+"binMax"     : 0.2,
 "PUWeight"   : "ev_weight"
 }
 
@@ -128,5 +128,45 @@
 "nBins"      : 50,
 "binMin"     : 0.0,
 "binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_ecalIso",
+"histogram"  : "el_ecalIso",
+"titleX"     : "ECAL PF cluster isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 10,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_hcalIso",
+"histogram"  : "el_hcalIso",
+"titleX"     : "HCAL PF cluster isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 10,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_trkIso",
+"histogram"  : "el_trkIso",
+"titleX"     : "Track isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_dr03TkSumPt",
+"histogram"  : "el_dr03TkSumPt",
+"titleX"     : "DR0.3 track sum pT [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5,
 "PUWeight"   : "ev_weight"
 }

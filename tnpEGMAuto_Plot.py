@@ -34,10 +34,10 @@ def Characterize_histDist (hist, colour_fill, style_fill, colour_mark, style_mar
 	#------------------------
 	hist . SetTitle ("")
 	hist . SetLineColor (colour_mark)
-	hist . SetLineWidth (1)
+	hist . SetLineWidth (2)
 	hist . SetMarkerColor (colour_mark)
 	hist . SetMarkerStyle (style_mark)
-	hist . SetMarkerSize (0.75)
+	hist . SetMarkerSize (2)
 	hist . SetFillColor (colour_fill)
 	hist . SetFillStyle (style_fill)
 
@@ -97,10 +97,10 @@ def Characterize_histRatio (hist, colour_fill, style_fill, colour_mark, style_ma
 	#------------------------
 	hist . SetTitle ("")
 	hist . SetLineColor (colour_mark)
-	hist . SetLineWidth (1)
+	hist . SetLineWidth (2)
 	hist . SetMarkerColor (colour_mark)
 	hist . SetMarkerStyle (style_mark)
-	hist . SetMarkerSize (0.75)
+	hist . SetMarkerSize (2)
 	hist . SetFillColor (colour_fill)
 	hist . SetFillStyle (style_fill)
 
@@ -214,6 +214,10 @@ def Create_Plot (dict_plotBlock):
 
 			nameXaxis = hist_tar.GetTitle()
 
+			# make fbrem plots publication style:
+			if "brem" in nameXaxis:
+				nameXaxis = nameXaxis.replace(" (EB)", "").replace(" (EE)", "")
+
 			# * Scale histogram if required
 			normFactor = 1.0
 			intTar = hist_tar.Integral()
@@ -225,15 +229,15 @@ def Create_Plot (dict_plotBlock):
 
 			#print ("     ||        Normalized by: {}".format(normFactor))
 
-			if (normFactor < 1.0):
-				hist_refErr . Scale (normFactor)
-				hist_refVal . Scale (normFactor)
-				print ("     ||  +>>  Normalized reference by: {}".format(normFactor))
-				pass
-			else:
-				hist_tar . Scale (1/normFactor)
-				print ("     ||  +>>  Normalized target by: {}".format(1/normFactor))
-				pass
+			#if (normFactor < 1.0):
+			hist_refErr . Scale (normFactor)
+			hist_refVal . Scale (normFactor)
+			print ("     ||  +>>  Normalized reference by: {}".format(normFactor))
+			# 	pass
+			# else: ### why rescale target (data!)?
+			# 	hist_tar . Scale (1/normFactor)
+			# 	print ("     ||  +>>  Normalized target by: {}".format(1/normFactor))
+			# 	pass
 
 
 
@@ -264,8 +268,16 @@ def Create_Plot (dict_plotBlock):
 			# + Characterize histogram
 			#-------------------------
 			Characterize_histDist (hist_tar,    myroot.kBlack,    1001, myroot.kBlack,    20, nameXaxis)
-			Characterize_histDist (hist_refVal, myroot.kOrange-4, 1001, myroot.kOrange-4,  1, nameXaxis)
-			Characterize_histDist (hist_refErr, myroot.kOrange+7, 3144, myroot.kOrange+7,  1, nameXaxis)
+			# if not isMC_tar:
+			# 	hist_tar.SetErrorOption("X", "0")
+
+			if isMC_ref:
+				Characterize_histDist (hist_refVal, myroot.kOrange-4, 1001, myroot.kOrange-4,  1, nameXaxis)
+				Characterize_histDist (hist_refErr, myroot.kOrange+7, 3144, myroot.kOrange+7,  1, nameXaxis)
+			else:
+				Characterize_histDist (hist_refVal, myroot.kOrange-4, 1001, myroot.kOrange+7,  20, nameXaxis)
+				Characterize_histDist (hist_refErr, myroot.kOrange+7, 1001, myroot.kOrange+7,  1, nameXaxis)
+
 
 			Characterize_histRatio (hist_ratVal, myroot.kBlack,    1001, myroot.kBlack,    20, nameXaxis, name_ratio)
 			Characterize_histRatio (hist_ratErr, myroot.kOrange+7, 3144, myroot.kOrange+7,  1, nameXaxis, name_ratio)
@@ -298,8 +310,6 @@ def Create_Plot (dict_plotBlock):
 				except:
 					multFactor = 100 if isLog else 1.5
 
-				print("\n", multFactor)
-
 				hist_tar    . SetMaximum (heightMax*multFactor)
 				hist_refVal . SetMaximum (heightMax*multFactor)
 				hist_refErr . SetMaximum (heightMax*multFactor)
@@ -321,7 +331,7 @@ def Create_Plot (dict_plotBlock):
 				name_canvas = name_canvas . replace ("_*.png", "_{}".format(name_hist))
 
 				#canvas = myroot.TCanvas (name_canvas, "", 600, 600)
-				canvas = myroot.TCanvas ("canvas", "", 600, 600)
+				canvas = myroot.TCanvas ("canvas", "", 1500, 1500)
 				print ("     ||  +>>  Created canvas with name [ {} ]" . format (name_canvas))
 
 				# * Pad for distribution
@@ -338,9 +348,16 @@ def Create_Plot (dict_plotBlock):
 				print ("     ||     |-> Pad 1 done")
 
 				# * Draw histogram for distribution
-				hist_refVal . Draw("hist")
-				hist_refErr . Draw("same e2")
-				hist_tar    . Draw("same ep")
+				if isMC_ref:
+					hist_refVal . Draw("hist")
+					hist_refErr . Draw("same e2")
+				else:
+					hist_refVal . Draw("p")
+					# hist_refErr . Draw("same e")
+
+
+				# hist_tar    . Draw("same ep")
+				hist_tar    . Draw("same,X0,E1")
 
 				# * Draw legend
 				legend = myroot.TLegend (0.62, 0.65, 0.91, 0.89)
@@ -350,7 +367,8 @@ def Create_Plot (dict_plotBlock):
 				legend . SetLineColorAlpha (0, 0.75)
 				legend . AddEntry (hist_tar,    "{}".format(leg_tar), "ep")
 				legend . AddEntry (hist_refVal, "{}".format(leg_ref),  "f")
-				legend . AddEntry (hist_refErr, "Stat. unc.",            "f")
+				if isMC_ref:
+					legend . AddEntry (hist_refErr, "Stat. unc.",            "f")
 				legend . Draw ("same")
 
 				texLogo = myroot.TLatex()
@@ -366,6 +384,22 @@ def Create_Plot (dict_plotBlock):
 				texLogo . SetTextSize (0.05)
 				texLogo . DrawLatex (0.29, 0.82, "#it{Preliminary}")
 
+				# adaption for one publication plot:
+				if "brem" in nameXaxis:
+					texLogo = myroot.TLatex()
+					texLogo . SetNDC()
+					texLogo . SetTextFont (42)
+					texLogo . SetTextSize (0.05)
+					texLogo . DrawLatex (0.18, 0.74, "#it{f}_{brem} > 0")
+
+
+					texLogo = myroot.TLatex()
+					texLogo . SetNDC()
+					texLogo . SetTextFont (42)
+					texLogo . SetTextSize (0.05)
+					text = "ECAL Barrel" if "_EB" in name_hist else  "ECAL Endcap"
+					texLogo . DrawLatex (0.18, 0.67, text)
+
 
 				str_lumi = ""
 				# if (year_ref != year_tar):
@@ -379,11 +413,18 @@ def Create_Plot (dict_plotBlock):
 				# 		str_lumi = "{:.2f} fb^{{-1}} {} (13.6 TeV)" . format (lumi_ref, year_ref)
 				# 		pass
 				# 	pass
-				str_lumi = "{:.2f} fb^{{-1}} {} (13.6 TeV)" . format (lumi_tar, year_tar)
 				texLumi = myroot.TLatex()
+				if isMC_ref and not isMC_tar:
+					str_lumi = "{:.2f} fb^{{-1}} {} (13.6 TeV)" . format (lumi_tar, year_tar)
+					texLumi . SetTextSize (0.055)
+				elif isMC_ref and isMC_tar:
+					str_lumi = "13.6 TeV"
+					texLumi . SetTextSize (0.055)
+				elif not isMC_tar and not isMC_ref:
+					str_lumi = "{:.2f} fb^{{-1}} ({}) vs. {:.2f} fb^{{-1}} ({}) (13.6 TeV)" . format (lumi_tar, leg_tar, lumi_ref, leg_ref)
+					texLumi . SetTextSize (0.04)
 				texLumi . SetNDC()
 				texLumi . SetTextFont (42)
-				texLumi . SetTextSize (0.055)
 				texLumi . SetTextAlign (31)
 				texLumi . DrawLatex (0.955, 0.935, "{}".format(str_lumi))
 
@@ -413,15 +454,17 @@ def Create_Plot (dict_plotBlock):
 				str_plotOutLocal = str_plotOutLocal . replace ("_*", "_{}".format(name_hist))
 				str_plotOutWeb   = path_plot . replace ("VariableName", "Variable_{}".format(name_hist))
 				str_plotOutWeb   = str_plotOutWeb . replace ("_*", "_{}".format(name_hist))
-				str_plotOutWeb   = str_plotOutWeb . replace (
-						"Output/EGM_Commissioning_Electron/",
-						"/eos/user/<firstletterofyourusername>/<yourusername>/www/Egamma/commissioning/")
+				# str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/w/wtabb/www/Egamma/commissioning/Electron/")
+				str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/f/fmausolf/www/Egamma/commissioning/Electron/")
+#				str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/e/egmcom/www/commissioning/Electron/")
+				#str_plotOutWeb   = str_plotOutWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/l/lcaophuc/www/Commissioning_Automation/Electron/")
 
 				dir_plot_checkLocal = dir_plot . replace ("VariableName", "Variable_{}".format(name_hist))
 				dir_plot_checkWeb   = dir_plot . replace ("VariableName", "Variable_{}".format(name_hist))
-				dir_plot_checkWeb   = dir_plot_checkWeb . replace (
-						"Output/EGM_Commissioning_Electron/",
-						"/eos/user/<firstletterofyourusername>/<yourusername>/www/Egamma/commissioning/")
+				# dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/w/wtabb/www/Egamma/commissioning/Electron/")
+				dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/f/fmausolf/www/Egamma/commissioning/Electron/")
+#				dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/e/egmcom/www/commissioning/Electron/")
+				#dir_plot_checkWeb   = dir_plot_checkWeb . replace ("/afs/cern.ch/work/e/egmcom/commissioning_automation/Output/EGM_Commissioning_Electron/", "/eos/user/l/lcaophuc/www/Commissioning_Automation/Electron/")
 
 
 				if (isLog):
@@ -439,10 +482,10 @@ def Create_Plot (dict_plotBlock):
 					os.makedirs (dir_plot_checkLocal)
 					pass
 
-				if not os.path.exists(dir_plot_checkWeb):
-					#print ("     ||         | >> Creating [{}]" . format(dir_plot_checkWeb))
-					os.makedirs (dir_plot_checkWeb)
-					pass
+				# if not os.path.exists(dir_plot_checkWeb):
+				# 	#print ("     ||         | >> Creating [{}]" . format(dir_plot_checkWeb))
+				# 	os.makedirs (dir_plot_checkWeb)
+				# 	pass
 
 				canvas . SaveAs (str_plotOutLocal)
 				print ("     ||     |-> Plot saved to:")
@@ -453,33 +496,33 @@ def Create_Plot (dict_plotBlock):
 				print ("     ||     |-> Plot saved to:")
 				print ("     ||         {}" . format(str_plotOutLocal))
 
-				str_plotOutLocal = str_plotOutLocal . replace (".pdf", ".C")
-				canvas . SaveAs (str_plotOutLocal)
-				print ("     ||     |-> Plot saved to:")
-				print ("     ||         {}" . format(str_plotOutLocal))
+				# str_plotOutLocal = str_plotOutLocal . replace (".pdf", ".C")
+				# canvas . SaveAs (str_plotOutLocal)
+				# print ("     ||     |-> Plot saved to:")
+				# print ("     ||         {}" . format(str_plotOutLocal))
 
 
-				canvas . SaveAs (str_plotOutWeb)
-				print ("     ||     |-> Plot saved to:")
-				print ("     ||         {}" . format(str_plotOutWeb))
+				# canvas . SaveAs (str_plotOutWeb)
+				# print ("     ||     |-> Plot saved to:")
+				# print ("     ||         {}" . format(str_plotOutWeb))
 
-				str_plotOutWeb   = str_plotOutWeb   . replace (".png", ".pdf")
-				canvas . SaveAs (str_plotOutWeb)
-				print ("     ||     |-> Plot saved to:")
-				print ("     ||         {}" . format(str_plotOutWeb))
+				# str_plotOutWeb   = str_plotOutWeb   . replace (".png", ".pdf")
+				# canvas . SaveAs (str_plotOutWeb)
+				# print ("     ||     |-> Plot saved to:")
+				# print ("     ||         {}" . format(str_plotOutWeb))
 
-				# Save canvas to root file
-				str_plotOutWeb = str_plotOutWeb . replace (".pdf", ".root")
+				# # Save canvas to root file
+				# str_plotOutWeb = str_plotOutWeb . replace (".pdf", ".root")
 
-				file_canvas = myroot . TFile (str_plotOutWeb, "recreate")
-				file_canvas . cd()
+				# file_canvas = myroot . TFile (str_plotOutWeb, "recreate")
+				# file_canvas . cd()
 
-				canvas . Write()
+				# canvas . Write()
 
-				file_canvas . Write()
-				file_canvas . Close()
-				print ("     ||     |-> Canvas saved to:")
-				print ("     ||         {}" . format(str_plotOutWeb))
+				# file_canvas . Write()
+				# file_canvas . Close()
+				# print ("     ||     |-> Canvas saved to:")
+				# print ("     ||         {}" . format(str_plotOutWeb))
 
 				pass
 

@@ -1,0 +1,47 @@
+{
+"filter1" : "event_nPV<30  &&  el_sc_abseta<=1.479  &&  el_5x5_sieie<0.0105  &&  fabs(el_dEtaIn)<0.00387  &&  fabs(el_dPhiIn)<0.0716  &&  el_hoe<0.05  &&  fabs(el_dxy)<0.060279  &&  fabs(el_dz)<0.800538",
+"regECAL" : "EB"
+}
+
+
+{
+"variable"   : "el_neuIso",
+"histogram"  : "el_neuIsolowPU",
+"titleX"     : "Neutral isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 5,
+"PUWeight"   : "ev_weight"
+}
+
+
+{
+"variable"   : "el_relneuIso",
+"histogram"  : "el_relneuIsolowPU",
+"titleX"     : "Rel. Neutral isolation",
+"nBins"      : 40,
+"binMin"     : 0.0,
+"binMax"     : 0.2,
+"PUWeight"   : "ev_weight"
+}
+
+{
+"variable"   : "el_neuIso_puSub",
+"histogram"  : "el_neuIsolowPU_puSub",
+"titleX"     : "PU subtracted Neutral isolation [GeV]",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
+
+
+{
+"variable"   : "el_relneuIso_puSub",
+"histogram"  : "el_relneuIsolowPU_puSub",
+"titleX"     : "Rel. PU subtracted Neutral isolation",
+"nBins"      : 50,
+"binMin"     : 0.0,
+"binMax"     : 0.5,
+"PUWeight"   : "ev_weight"
+}
